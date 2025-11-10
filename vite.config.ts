@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/green-graze-feeds-main/",
+  base: "/green-graze/",
   server: {
     host: "::",
     port: 8080,
