@@ -1,15 +1,15 @@
 {
-  "homepage": "https://github.com/sectumsoft/green_gaze.git",
+  "homepage": "https://sectumsoft.github.io/green_gaze/",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-     "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
