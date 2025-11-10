@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Natural earth tones palette */
+    --background: 40 30% 97%;
+    --foreground: 120 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 15% 20%;
+
+    /* Soft natural green - primary brand color */
+    --primary: 120 35% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm beige - secondary color */
+    --secondary: 35 25% 75%;
+    --secondary-foreground: 120 15% 20%;
+
+    /* Muted earthy tones */
+    --muted: 40 20% 90%;
+    --muted-foreground: 120 10% 40%;
+
+    /* Accent - deeper green */
+    --accent: 115 40% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 120 35% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom nature-inspired tokens */
+    --nature-green: 120 35% 45%;
+    --nature-beige: 35 25% 75%;
+    --nature-brown: 30 30% 40%;
+    --nature-light: 40 30% 95%;
+    
+    /* Gradients */
+    --gradient-green: linear-gradient(135deg, hsl(120 35% 45%) 0%, hsl(115 40% 38%) 100%);
+    --gradient-natural: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(40 20% 90%) 100%);
+    
+    /* Shadows with natural tones */
+    --shadow-soft: 0 4px 20px hsla(120 20% 30% / 0.1);
+    --shadow-medium: 0 8px 30px hsla(120 20% 30% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 120 15% 12%;
+    --foreground: 40 30% 95%;
+
+    --card: 120 15% 15%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 120 15% 15%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 120 35% 55%;
+    --primary-foreground: 120 15% 12%;
+
+    --secondary: 35 20% 25%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 120 10% 20%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 115 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 10% 25%;
+    --input: 120 10% 25%;
+    --ring: 120 35% 55%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .nature-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsla(120 30% 60% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsla(115 25% 55% / 0.03) 0%, transparent 50%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
